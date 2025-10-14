@@ -11,11 +11,11 @@ function out = collection2cell(collection)
     end
     
     % get an iterator for the set
-    iter = collection.iterator();
+    iter = iterator(collection);
     
     % init
-    out = cell(collection.size,1);  indx = 1;
+    out = cell(size(collection),1);  indx = 1;
     
     % iterate over the collection and build output
-    while iter.hasNext(); out{indx} = iter.next(); indx = indx + 1; end
+    while hasNext(iter); out{indx} = next(iter); indx = indx + 1; end
 end
